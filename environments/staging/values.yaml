@@ -1,0 +1,8 @@
+global:
+  namespace: dev
+
+images: {}
+services: {}
+postgresql: {}
+redis: {}
+minio: {}
