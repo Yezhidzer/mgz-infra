@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: user-service-config
+data:
+  GRPC_PORT: {{ .Values.config.GRPC_PORT | quote }}
+  S3_ENDPOINT: {{ .Values.config.S3_ENDPOINT | quote }}
+  S3_BUCKET: {{ .Values.config.S3_BUCKET | quote }}
+  S3_USE_SSL: {{ .Values.config.S3_USE_SSL | quote }}
