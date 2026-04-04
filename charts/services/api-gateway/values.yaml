@@ -20,3 +20,10 @@ config:
 
 secret:
   JWT_SECRET: "change-me"
+
+ingress:
+  enabled: true
+  className: nginx
+  host: api.dev.local
+  path: /
+  pathType: Prefix
