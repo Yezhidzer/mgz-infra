@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgresql-initdb
+data:
+  init.sql: |
+    CREATE DATABASE chat_message;
+    CREATE DATABASE user_service;
