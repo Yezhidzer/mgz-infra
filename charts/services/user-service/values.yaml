@@ -1,0 +1,24 @@
+replicaCount: 1
+
+image:
+  repository: your-dockerhub-or-registry/user-service
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 50052
+
+container:
+  port: 50052
+
+config:
+  GRPC_PORT: "50052"
+  S3_ENDPOINT: "minio:9000"
+  S3_BUCKET: "users"
+  S3_USE_SSL: "false"
+
+secret:
+  DATABASE_URL: "postgres://postgres:postgres@postgresql:5432/user_service?sslmode=disable"
+  S3_ACCESS_KEY: "minioadmin"
+  S3_SECRET_KEY: "minioadmin"
