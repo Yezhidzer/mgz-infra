@@ -1,0 +1,7 @@
+api-gateway: {}
+auth-service: {}
+chat-service: {}
+user-service: {}
+postgresql: {}
+redis: {}
+minio: {}
