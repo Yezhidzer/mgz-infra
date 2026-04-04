@@ -13,15 +13,11 @@ container:
   port: 8081
 
 config:
-  APP_PORT: "8081"
-  DATABASE_HOST: "postgresql"
-  DATABASE_PORT: "5432"
-  DATABASE_NAME: "auth"
-  REDIS_HOST: "redis"
-  REDIS_PORT: "6379"
-  REDIS_DB: "0"
+  SERVER_PORT: "8081"
+  DATABASE_URL: "postgres://postgres:postgres@postgresql:5432/auth?sslmode=disable"
+  REDIS_URL: "redis://redis:6379/0"
+  JWT_ACCESS_TTL_MINUTES: "15"
+  JWT_REFRESH_TTL_DAYS: "7"
 
 secret:
-  DATABASE_USER: "postgres"
-  DATABASE_PASSWORD: "postgres"
   JWT_SECRET: "change-me"
