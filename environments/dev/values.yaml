@@ -10,6 +10,12 @@ api-gateway:
     AUTH_SERVICE_URL: "http://auth-service:8081"
     CHAT_SERVICE_URL: "chat-service:50051"
     USER_SERVICE_URL: "user-service:50052"
+  ingress:
+    enabled: true
+    className: nginx
+    host: api.dev.local
+    path: /
+    pathType: Prefix
 
 auth-service:
   replicaCount: 1
