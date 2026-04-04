@@ -1,0 +1,11 @@
+image:
+  repository: redis
+  tag: "7-alpine"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 6379
+
+container:
+  port: 6379
