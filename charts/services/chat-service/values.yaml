@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: your-dockerhub-or-registry/chat-service
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 50051
+
+container:
+  port: 50051
+
+config:
+  GRPC_PORT: "50051"
+  REDIS_ADDR: "redis:6379"
+  REDIS_DB: "0"
+  CACHE_TTL: "20m"
+
+secret:
+  DATABASE_URL: "postgres://postgres:postgres@postgresql:5432/chat_message?sslmode=disable"
