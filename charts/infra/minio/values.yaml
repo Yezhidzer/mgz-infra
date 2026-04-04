@@ -1,0 +1,30 @@
+image:
+  repository: minio/minio
+  tag: latest
+  pullPolicy: IfNotPresent
+
+mcImage:
+  repository: minio/mc
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 9000
+
+container:
+  port: 9000
+
+persistence:
+  enabled: true
+  size: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""
+
+config:
+  bucketName: users
+
+secret:
+  MINIO_ROOT_USER: minioadmin
+  MINIO_ROOT_PASSWORD: minioadmin
