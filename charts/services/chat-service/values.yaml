@@ -18,5 +18,11 @@ config:
   REDIS_DB: "0"
   CACHE_TTL: "20m"
 
+migration:
+  image:
+    repository: migrate/migrate
+    tag: v4.18.3
+    pullPolicy: IfNotPresent
+
 secret:
   DATABASE_URL: "postgres://postgres:postgres@postgresql:5432/chat_message?sslmode=disable"
