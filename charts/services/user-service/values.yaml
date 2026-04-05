@@ -18,6 +18,12 @@ config:
   S3_BUCKET: "users"
   S3_USE_SSL: "false"
 
+migration:
+  image:
+    repository: migrate/migrate
+    tag: v4.18.3
+    pullPolicy: IfNotPresent
+    
 secret:
   DATABASE_URL: "postgres://postgres:postgres@postgresql:5432/user_service?sslmode=disable"
   S3_ACCESS_KEY: "minioadmin"
