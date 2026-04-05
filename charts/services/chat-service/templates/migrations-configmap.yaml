@@ -1,1 +1,9 @@
-
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: chat-service-migrations
+data:
+{{- range $path, $_ := .Files.Glob "migrations/*.up.sql" }}
+  {{ base $path }}: |
+{{ $.Files.Get $path | indent 4 }}
+{{- end }}
