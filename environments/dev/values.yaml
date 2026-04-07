@@ -4,7 +4,7 @@ global:
 api-gateway:
   replicaCount: 1
   image:
-    repository: ghcr.io/Yezhidzer/api-service
+    repository: ghcr.io/yezhidzer/api-service
     tag: dev-latest
   config:
     GATEWAY_PORT: "8080"
@@ -21,7 +21,7 @@ api-gateway:
 auth-service:
   replicaCount: 1
   image:
-    repository: ghcr.io/Yezhidzer/auth-service
+    repository: ghcr.io/yezhidzer/auth-service
     tag: dev-latest
   config:
     SERVER_PORT: "8081"
@@ -33,7 +33,7 @@ auth-service:
 chat-service:
   replicaCount: 1
   image:
-    repository: ghcr.io/Yezhidzer/chat-service
+    repository: ghcr.io/yezhidzer/chat-service
     tag: dev-latest
   config:
     GRPC_PORT: "50051"
@@ -46,7 +46,7 @@ chat-service:
 user-service:
   replicaCount: 1
   image:
-    repository: ghcr.io/Yezhidzer/user-service
+    repository: ghcr.io/yezhidzer/user-service
     tag: dev-latest
   config:
     GRPC_PORT: "50052"
