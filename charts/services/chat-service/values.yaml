@@ -12,6 +12,9 @@ service:
 container:
   port: 50051
 
+metrics:
+  port: 9101
+  
 config:
   GRPC_PORT: "50051"
   REDIS_ADDR: "redis:6379"
