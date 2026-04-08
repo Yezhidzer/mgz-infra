@@ -13,7 +13,7 @@ api-gateway:
     USER_SERVICE_URL: "user-service:50052"
   ingress:
     enabled: true
-    className: nginx
+    className: traefik
     host: api.dev.local
     path: /
     pathType: Prefix
