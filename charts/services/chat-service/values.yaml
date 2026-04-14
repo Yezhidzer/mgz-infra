@@ -29,3 +29,8 @@ migration:
 
 secret:
   DATABASE_URL: "postgres://postgres:postgres@postgresql:5432/chat_message?sslmode=disable"
+
+metrics:
+  enabled: true
+  path: /metrics
+  port: 9101
