@@ -18,6 +18,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.container.port }}
+            - containerPort: {{ .Values.metrics.port }}
           envFrom:
             - configMapRef:
                 name: chat-service-config
