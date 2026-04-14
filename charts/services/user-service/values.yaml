@@ -28,3 +28,8 @@ secret:
   DATABASE_URL: "postgres://postgres:postgres@postgresql:5432/user_service?sslmode=disable"
   S3_ACCESS_KEY: "minioadmin"
   S3_SECRET_KEY: "minioadmin"
+
+metrics:
+  enabled: true
+  path: /metrics
+  port: 9102
