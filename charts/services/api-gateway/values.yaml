@@ -27,3 +27,8 @@ ingress:
   host: api.dev.local
   path: /
   pathType: Prefix
+
+metrics:
+  enabled: true
+  path: /metrics
+  port: 8080
