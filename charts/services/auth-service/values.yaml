@@ -21,3 +21,8 @@ config:
 
 secret:
   JWT_SECRET: "change-me"
+
+metrics:
+  enabled: true
+  path: /metrics
+  port: 8081
