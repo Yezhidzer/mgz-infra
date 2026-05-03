@@ -17,8 +17,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - containerPort: {{ .Values.container.port }}
-            - containerPort: {{ .Values.metrics.port }}
+            - containerPort: 50051
+            - containerPort: 9101
           envFrom:
             - configMapRef:
                 name: chat-service-config
