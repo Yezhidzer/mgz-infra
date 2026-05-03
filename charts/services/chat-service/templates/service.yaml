@@ -4,18 +4,16 @@ metadata:
   name: chat-service
   annotations:
     prometheus.io/scrape: "true"
-    prometheus.io/path: {{ .Values.metrics.path | quote }}
-    prometheus.io/port: {{ .Values.metrics.port | quote }}
+    prometheus.io/path: "/metrics"
+    prometheus.io/port: "9101"
 spec:
   type: {{ .Values.service.type }}
   selector:
     app: chat-service
   ports:
     - name: grpc
-      port: {{ .Values.service.port }}
-      targetPort: {{ .Values.container.port }}
-      protocol: TCP
+      port: 50051
+      targetPort: 50051
     - name: metrics
-      port: {{ .Values.metrics.port }}
-      targetPort: {{ .Values.metrics.port }}
-      protocol: TCP
+      port: 9101
+      targetPort: 9101
