@@ -17,8 +17,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - containerPort: {{ .Values.container.port }}
-            - containerPort: {{ .Values.metrics.port }}
+            - containerPort: 50052
+            - containerPort: 9102
           envFrom:
             - configMapRef:
                 name: user-service-config
