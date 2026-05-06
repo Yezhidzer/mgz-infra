@@ -13,7 +13,9 @@ container:
   port: 50051
 
 metrics:
+  enabled: true
   port: 9101
+  path: /metrics
   
 config:
   GRPC_PORT: "50051"
