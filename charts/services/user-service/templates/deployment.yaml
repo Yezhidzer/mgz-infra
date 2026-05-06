@@ -17,8 +17,12 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - containerPort: 50052
-            - containerPort: 9102
+            - name: grpc
+              containerPort: {{ .Values.container.port }}
+            {{- if .Values.metrics.enabled }}
+            - name: metrics
+              containerPort: {{ .Values.metrics.port }}
+            {{- end }}
           envFrom:
             - configMapRef:
                 name: user-service-config
