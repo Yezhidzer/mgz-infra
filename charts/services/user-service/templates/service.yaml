@@ -12,8 +12,10 @@ spec:
     app: user-service
   ports:
     - name: grpc
-      port: 50052
-      targetPort: 50052
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.container.port }}
+    {{- if .Values.metrics.enabled }}
     - name: metrics
-      port: 9102
-      targetPort: 9102
+      port: {{ .Values.metrics.port }}
+      targetPort: {{ .Values.metrics.port }}
+  {{- end }}
