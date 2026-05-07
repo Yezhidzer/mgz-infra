@@ -5,3 +5,17 @@ user-service: {}
 postgresql: {}
 redis: {}
 minio: {}
+
+monitoring:
+  enabled: true
+
+kube-prometheus-stack:
+  grafana:
+    enabled: true
+  alertmanager:
+    enabled: false
+  prometheus:
+    prometheusSpec:
+      serviceMonitorSelectorNilUsesHelmValues: false
+      podMonitorSelectorNilUsesHelmValues: false
+      retention: 7d

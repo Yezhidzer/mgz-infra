@@ -4,8 +4,8 @@ metadata:
   name: user-service
   annotations:
     prometheus.io/scrape: "true"
-    prometheus.io/path: "/metrics"
-    prometheus.io/port: "9102"
+    prometheus.io/path: /metrics
+    prometheus.io/port: {{ .Values.service.metricsPort | quote }}
 spec:
   type: {{ .Values.service.type }}
   selector:
@@ -14,8 +14,8 @@ spec:
     - name: grpc
       port: {{ .Values.service.port }}
       targetPort: {{ .Values.container.port }}
-    {{- if .Values.metrics.enabled }}
+      protocol: TCP
     - name: metrics
-      port: {{ .Values.metrics.port }}
-      targetPort: {{ .Values.metrics.port }}
-  {{- end }}
+      port: {{ .Values.service.metricsPort }}
+      targetPort: {{ .Values.container.metricsPort }}
+      protocol: TCP

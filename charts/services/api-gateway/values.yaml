@@ -8,6 +8,14 @@ image:
 service:
   type: ClusterIP
   port: 8080
+  metricsPort: 8080
+
+serviceMonitor:
+  enabled: true
+  interval: 30s
+  scrapeTimeout: 10s
+  path: /metrics
+  port: http
 
 container:
   port: 8080

@@ -18,9 +18,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: grpc
-              containerPort: 50051
+              containerPort: {{ .Values.container.port }}
             - name: metrics
-              containerPort: 9101
+              containerPort: {{ .Values.container.metricsPort }}
           envFrom:
             - configMapRef:
                 name: chat-service-config

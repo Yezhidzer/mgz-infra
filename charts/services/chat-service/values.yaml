@@ -8,9 +8,18 @@ image:
 service:
   type: ClusterIP
   port: 50051
+  metricsPort: 9090
+
+serviceMonitor:
+  enabled: true
+  interval: 30s
+  scrapeTimeout: 10s
+  path: /metrics
+  port: metrics
 
 container:
   port: 50051
+  metricsPort: 9090
 
 metrics:
   enabled: true
@@ -19,6 +28,7 @@ metrics:
   
 config:
   GRPC_PORT: "50051"
+  METRICS_PORT: "9090"
   REDIS_ADDR: "redis:6379"
   REDIS_DB: "0"
   CACHE_TTL: "20m"

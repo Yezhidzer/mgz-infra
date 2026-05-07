@@ -19,10 +19,8 @@ spec:
           ports:
             - name: grpc
               containerPort: {{ .Values.container.port }}
-            {{- if .Values.metrics.enabled }}
             - name: metrics
-              containerPort: {{ .Values.metrics.port }}
-            {{- end }}
+              containerPort: {{ .Values.container.metricsPort }}
           envFrom:
             - configMapRef:
                 name: user-service-config

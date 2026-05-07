@@ -4,6 +4,7 @@ metadata:
   name: chat-service-config
 data:
   GRPC_PORT: {{ .Values.config.GRPC_PORT | quote }}
+  METRICS_PORT: {{ .Values.config.METRICS_PORT | quote }}
   REDIS_ADDR: {{ .Values.config.REDIS_ADDR | quote }}
   REDIS_DB: {{ .Values.config.REDIS_DB | quote }}
   CACHE_TTL: {{ .Values.config.CACHE_TTL | quote }}
