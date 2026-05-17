@@ -21,4 +21,4 @@ dependencies:
   repository: file://../infra/minio
   version: 0.1.0
 digest: sha256:ba889d4d3c22d36f1ad1bad294c14c9426fd17cbffcff0553c7269334d0221ed
-generated: "2026-04-04T23:56:03.233060699+03:00"
+generated: "2026-05-17T12:21:02.193733968Z"

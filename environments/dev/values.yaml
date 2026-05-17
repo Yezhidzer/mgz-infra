@@ -69,12 +69,3 @@ minio:
     bucketName: "users"
   persistence:
     size: 5Gi
-
-monitoring:
-  enabled: true
-
-kube-prometheus-stack:
-  grafana:
-    enabled: true
-  alertmanager:
-    enabled: false
